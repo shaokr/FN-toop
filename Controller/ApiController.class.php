@@ -25,7 +25,7 @@ class ApiController extends PublicController {
 			$envData[$key]['css'] = C("this_d").$value['site'].$value['css'];
 		}
 
-		$this->assign('list',$list);
+		// $this->assign('list',$list);
 		// 分析html
 		function htmlFx(){
 			$filename=[
@@ -122,6 +122,10 @@ class ApiController extends PublicController {
 		}
 
 		echo json_encode($pdname);
+    }
+    public function setenv(){
+    	session("env",I('env'));
+    	echo 1;
     }
     public function dir(){
 
